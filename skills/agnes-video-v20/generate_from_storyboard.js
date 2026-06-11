@@ -13,13 +13,16 @@ function parseArgs(argv) {
   const args = { storyboard: undefined, outputDir: undefined };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
-    if ((a === '--storyboard' || a === '-s') && argv[i + 1]) {
+    if (a === '--help' || a === '-h') {
+      args.help = true;
+    } else if ((a === '--storyboard' || a === '-s') && argv[i + 1]) {
       args.storyboard = argv[++i];
     } else if ((a === '--output' || a === '-o') && argv[i + 1]) {
       args.outputDir = argv[++i];
+    } else if (!a.startsWith('-') && !args.storyboard) {
+      args.storyboard = a;
     }
   }
-  if (!args.storyboard) args.storyboard = 'storyboard.json';
   if (!args.outputDir) args.outputDir = 'output';
   return args;
 }
@@ -154,6 +157,11 @@ async function downloadToFile(url, filePath) {
 async function main() {
   const args = parseArgs(process.argv);
   const apiKey = requiredEnv('AGNES_API_KEY');
+  if (args.help) {
+    console.log(`Usage: node skills/agnes-video-v20/generate_from_storyboard.js --storyboard <path> [--output <dir>]\n\nOptions:\n  -s, --storyboard   Path to storyboard JSON (required)\n  -o, --output       Output directory (default: output)\n  -h, --help         Show help\n`);
+    return;
+  }
+  if (!args.storyboard) throw new Error('Missing required --storyboard <path>');
   const storyboardPath = path.resolve(args.storyboard);
   const storyboardRaw = await fs.readFile(storyboardPath, 'utf-8');
   const storyboard = JSON.parse(storyboardRaw);
@@ -191,11 +199,15 @@ async function main() {
       video_url: videoUrl,
     };
 
-    if (videoUrl) {
-      const ext = videoUrl.includes('.mp4') ? '.mp4' : '.video';
-      const outFile = path.join(outputDir, `${sceneId}${ext}`);
-      await downloadToFile(videoUrl, outFile);
-      sceneResult.local_path = outFile;
+    if (videoUrl && /^https?:\/\//i.test(videoUrl)) {
+      try {
+        const ext = videoUrl.includes('.mp4') ? '.mp4' : '.video';
+        const outFile = path.join(outputDir, `${sceneId}${ext}`);
+        await downloadToFile(videoUrl, outFile);
+        sceneResult.local_path = outFile;
+      } catch (downloadErr) {
+        sceneResult.download_error = String(downloadErr?.message ?? downloadErr);
+      }
     }
 
     results.push(sceneResult);
