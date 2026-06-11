@@ -1,0 +1,114 @@
+{
+  "default_num_frames": 161,
+  "default_frame_rate": 24,
+  "scenes": [
+    {
+      "scene_id": "scene-01",
+      "prompt": "Cinematic 2D anime family cat scene at night. Five anthropomorphic cat family members stand before a new doorway stacked with cardboard boxes. Dad cat holds a checklist and taps his tail rhythmically, mom cat hugs a poster tube, the teenage son cat stands with one paw in his pocket, the little daughter cat lies on a box, and grandma cat holds a worn cloth bag. Warm porch light, gentle night air, soft camera dolly-in, cozy modern animation style.",
+      "mode": "multi-image",
+      "images": [
+        "image/R1.png",
+        "image/R2.png",
+        "image/R3.png",
+        "image/R4.png",
+        "image/R5.png",
+        "image/L1.png"
+      ],
+      "width": 1280,
+      "height": 720,
+      "num_frames": 161,
+      "frame_rate": 24,
+      "notes": "对应剧本：场景1，新家门口，纸箱堆成小山。可用音频：video/R1.mp3, video/R2.mp3, video/R3.mp3, video/R4.mp3, video/R5.mp3。"
+    },
+    {
+      "scene_id": "scene-02",
+      "prompt": "Inside a dim new apartment with only cardboard boxes and a standing floor lamp. Dad cat places arrow markers on the floor, the teen son cat searches for signal, the little daughter cat pops up from a box like a castle, and grandma shakes out an old cloth. Dad slips, his tail sweeps markers, mom smiles gently and offers reassurance. Soft lamplight, cozy dust particles, playful medium shots, warm 2D anime storytelling style.",
+      "mode": "multi-image",
+      "images": [
+        "image/R1.png",
+        "image/R3.png",
+        "image/R4.png",
+        "image/L2.png"
+      ],
+      "width": 1280,
+      "height": 720,
+      "num_frames": 161,
+      "frame_rate": 24,
+      "notes": "对应剧本：场景2，屋里只有纸箱和一盏落地灯。"
+    },
+    {
+      "scene_id": "scene-03",
+      "prompt": "Warm living room discussion shot. Five cat family members stand around cardboard boxes while assigning bedrooms. Dad presents a plan, the teen son raises a confident paw, the little daughter points eagerly, grandma gestures respectfully, and mom smiles while offering a calm compromise. Everyone suddenly shouts together in agreement. Gentle ceiling light, medium group framing, lively character acting, cute 2D anime family style.",
+      "mode": "multi-image",
+      "images": [
+        "image/R1.png",
+        "image/R2.png",
+        "image/R3.png",
+        "image/R4.png",
+        "image/R5.png"
+      ],
+      "width": 1280,
+      "height": 720,
+      "num_frames": 161,
+      "frame_rate": 24,
+      "notes": "对应剧本：场景3，分配卧室环节。"
+    },
+    {
+      "scene_id": "scene-04",
+      "prompt": "Comedy highlight shot. A little cat tears open a large cardboard box and sparks a playful scratch contest. Paper bits fly like snow as dad tries neat scratch rules, the teen son tears confidently, grandma smiles nostalgically, and mom laughs freely. Joyful action beats, quick camera push-in, bright warm lighting, charming 2D anime family comedy style.",
+      "mode": "image",
+      "image": "image/L3.png",
+      "width": 1280,
+      "height": 720,
+      "num_frames": 161,
+      "frame_rate": 24,
+      "notes": "对应剧本：场景4，纸箱抓抓大赛。"
+    },
+    {
+      "scene_id": "scene-05",
+      "prompt": "Suddenly the room goes dark and wind sounds outside the window. Phone flashlights turn on one by one as the cat family calls roll call to calm each other. Light spots dance on the wall, the teen son chases a spot, and everyone laughs while tension fades. Cinematic darkness with warm small light sources, intimate close-ups and medium shots, cozy 2D anime emotional beat.",
+      "mode": "image",
+      "image": "image/L4.png",
+      "width": 1280,
+      "height": 720,
+      "num_frames": 161,
+      "frame_rate": 24,
+      "notes": "对应剧本：场景5，停电冲突。"
+    },
+    {
+      "scene_id": "scene-06",
+      "prompt": "A small home corner takes shape. The family stacks cardboard boxes into a temporary table, lays out grandma's old cloth, places cups, and sticks on the little daughter's handwritten paper that says home. The moment feels safe and new. Gentle overhead to eye-level camera move, soft warm lamp light, hopeful pacing, cozy 2D anime slice-of-life style.",
+      "mode": "multi-image",
+      "images": [
+        "image/R1.png",
+        "image/R2.png",
+        "image/R4.png",
+        "image/R5.png",
+        "image/L4.png"
+      ],
+      "width": 1280,
+      "height": 720,
+      "num_frames": 161,
+      "frame_rate": 24,
+      "notes": "对应剧本：场景6，第一个'家角落'。"
+    },
+    {
+      "scene_id": "scene-07",
+      "prompt": "Final episode beat. Outside the window, distant lights begin to twinkle while the little lamp finally comes back on. The five cat family members sit around the cardboard table together in a calm, grateful mood. Camera slowly pulls back into a gentle wide shot, soft golden light, emotional closure, comforting 2D anime family ending style.",
+      "mode": "multi-image",
+      "images": [
+        "image/R1.png",
+        "image/R2.png",
+        "image/R3.png",
+        "image/R4.png",
+        "image/R5.png",
+        "image/L4.png"
+      ],
+      "width": 1280,
+      "height": 720,
+      "num_frames": 161,
+      "frame_rate": 24,
+      "notes": "对应剧本：场景7，片尾收束。可用台词：'家不是地方，是一起想办法的我们。'"
+    }
+  ]
+}
