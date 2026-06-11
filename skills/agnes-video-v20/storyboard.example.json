@@ -1,0 +1,38 @@
+{
+  "default_num_frames": 121,
+  "default_frame_rate": 24,
+  "scenes": [
+    {
+      "scene_id": "scene-01",
+      "prompt": "The cat slowly turns toward the ocean, gentle wind moves the fur, cinematic tracking shot, warm sunset lighting, realistic style",
+      "mode": "image",
+      "image": "https://example.com/cat-01.png",
+      "width": 1152,
+      "height": 768,
+      "num_frames": 121,
+      "frame_rate": 24
+    },
+    {
+      "scene_id": "scene-02",
+      "prompt": "Transform the scene from the indoor moment toward the outdoor park moment, consistent character identity, cinematic pacing, soft natural lighting",
+      "mode": "multi-image",
+      "images": [
+        "https://example.com/moment-indoor.png",
+        "https://example.com/moment-park.png"
+      ],
+      "num_frames": 121,
+      "frame_rate": 24
+    },
+    {
+      "scene_id": "scene-03",
+      "prompt": "Create a smooth transition from the first keyframe to the second keyframe, keeping the subject consistent, natural motion, cinematic camera movement",
+      "mode": "keyframes",
+      "images": [
+        "https://example.com/keyframe1.png",
+        "https://example.com/keyframe2.png"
+      ],
+      "num_frames": 161,
+      "frame_rate": 24
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agnes Video V2.0 Storyboard",
+  "type": "object",
+  "required": ["scenes"],
+  "properties": {
+    "default_num_frames": { "type": "integer", "minimum": 1, "maximum": 441 },
+    "default_frame_rate": { "type": "integer", "minimum": 1, "maximum": 60 },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["scene_id", "prompt"],
+        "properties": {
+          "scene_id": { "type": "string" },
+          "prompt": { "type": "string" },
+          "mode": {
+            "type": "string",
+            "enum": ["image", "multi-image", "keyframes", "text"]
+          },
+          "image": { "type": "string", "format": "uri" },
+          "images": {
+            "type": "array",
+            "items": { "type": "string", "format": "uri" },
+            "minItems": 1
+          },
+          "width": { "type": "integer", "minimum": 1 },
+          "height": { "type": "integer", "minimum": 1 },
+          "num_frames": { "type": "integer", "minimum": 1, "maximum": 441 },
+          "frame_rate": { "type": "integer", "minimum": 1, "maximum": 60 },
+          "notes": { "type": "string" }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "mode": { "const": "image" } }, "required": ["mode"] },
+            "then": { "required": ["image"] }
+          },
+          {
+            "if": { "properties": { "mode": { "const": "multi-image" } }, "required": ["mode"] },
+            "then": { "required": ["images"] }
+          },
+          {
+            "if": { "properties": { "mode": { "const": "keyframes" } }, "required": ["mode"] },
+            "then": { "required": ["images"] }
+          }
+        ]
+      }
+    }
+  }
+}
